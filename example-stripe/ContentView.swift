@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isShowingApplePayView: Bool = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if isShowingApplePayView {
+            ApplePay()
+        } else {
+            Button("GO TO STRIPE TEST") {
+                isShowingApplePayView = true
+            }
+        }
     }
 }
 
